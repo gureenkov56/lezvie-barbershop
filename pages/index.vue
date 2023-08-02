@@ -1,12 +1,5 @@
 <template>
-    <div class="wrapper">
-        <Bg />
-        <div class="content">
-            <Header />
-            <Content />
-            <Footer />
-        </div>
-    </div>
+    <HomeFirstScreen/>
 </template>
 
 <script lang='ts'>
@@ -18,25 +11,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 
-.content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    
-}
 </style>
