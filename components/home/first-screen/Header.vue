@@ -13,7 +13,7 @@
       <div class="triangle"></div>
       <div class="triangle right"></div>
       <div class="content">
-        <img src="public/svg/lezvie.svg" alt="lezvie" />
+        <img src="/svg/lezvie.svg" alt="lezvie" />
         <div>
           <div class="lezvie gothic-font">LEZVIE</div>
           <div class="barbershop gothic-font">BARBERSHOP</div>
@@ -34,6 +34,14 @@ export default defineComponent({
 <style lang="scss">
 header {
   background-color: #0f0f0f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 
   nav {
     margin: 0 auto;
