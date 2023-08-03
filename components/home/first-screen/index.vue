@@ -16,7 +16,7 @@
         </span>
       </div>
       <a href="https://b941152.yclients.com/">
-        <button>Записаться</button>
+        <CommonButton />
       </a>
     </div>
   </div>
@@ -117,19 +117,6 @@ export default defineComponent({
       .nozhnici {
         transform: rotate(-90deg);
       }
-    }
-  }
-
-  a {
-    button {
-      cursor: pointer;
-      border: 2px solid #cd9323;
-      padding: 10px 50px;
-      color: white;
-      background-color: transparent;
-      font-size: 1.2rem;
-      letter-spacing: 3px;
-      font-weight: 100;
     }
   }
 }

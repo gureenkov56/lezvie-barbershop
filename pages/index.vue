@@ -1,15 +1,14 @@
 <template>
-    <HomeFirstScreen/>
+  <HomeFirstScreen />
+  <HomeContactsSections />
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    name: "index",
+  name: "index",
 });
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

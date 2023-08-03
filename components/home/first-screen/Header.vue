@@ -2,11 +2,11 @@
   <header>
     <nav>
       <ul>
-        <li>Главная</li>
-        <li>Цены</li>
+        <!--        <li>Главная</li>-->
+        <!--        <li>Цены</li>-->
         <li class="space"></li>
-        <li>Контакты</li>
-        <li>О нас</li>
+        <!--        <li>Контакты</li>-->
+        <!--        <li>О нас</li>-->
       </ul>
     </nav>
     <div class="label">
