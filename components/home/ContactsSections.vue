@@ -5,7 +5,7 @@
         <div class="map-iframe">
           <a
             href="https://yandex.ru/maps/org/lezviye/10932414914/?utm_medium=mapframe&utm_source=maps"
-            style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+            style="color: #eee; font-size: 12px; position: absolute; top: 0"
             >Лезвие</a
           ><a
             href="https://yandex.ru/maps/48/orenburg/category/barber_shop/239628851835/?utm_medium=mapframe&utm_source=maps"
@@ -23,19 +23,29 @@
       </div>
       <div class="text">
         <h2>Контакты</h2>
-        <div><span class="title">Телефон: </span>+7 (995) 348-26-05</div>
-        <div><span class="title">Почта: </span>lezviebarbershop@gmail.com</div>
+        <div>
+          <span class="title">Телефон: </span>
+          <a href="tel:+79953482605" target="_blank"> +7 (995) 348-26-05 </a>
+        </div>
+        <div>
+          <span class="title">Почта: </span>
+          <a href="mailto:lezvie.barbershop56@gmail.com" target="_blank">
+            lezvie.barbershop56@gmail.com
+          </a>
+        </div>
         <div class="adressAndTime">
           <div>
             <div class="title">Адрес:</div>
-            Оренбург, ул. Березка 2/5
+            <a href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
+              Оренбург, ул. Березка 2/5
+            </a>
           </div>
           <div>
             <div class="title">Время работы:</div>
-            10:00 - 20:00 каждый день
+            <div class="time">10:00 - 20:00 каждый день</div>
           </div>
         </div>
-        <a href="https://b941152.yclients.com/">
+        <a href="https://b941152.yclients.com/" target="_blank">
           <CommonButton />
         </a>
       </div>
@@ -53,7 +63,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .contacts {
-  background-color: #0f0f0f;
+  background-image: url("/images/contacts-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
   padding: 3rem 1rem;
 
   .content {
@@ -97,6 +110,12 @@ export default defineComponent({
 
       > * {
         font-weight: 100;
+      }
+
+      a,
+      .time {
+        color: #e3e3e3;
+        font-weight: 400;
       }
 
       h2 {

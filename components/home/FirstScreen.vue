@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <CommonHeader />
     <div class="first">
       <div></div>
       <div class="center-block">
@@ -15,7 +15,7 @@
           <img src="/svg/britva.svg" alt="britva" />
         </span>
       </div>
-      <a href="https://b941152.yclients.com/">
+      <a href="https://b941152.yclients.com/" target="_blank">
         <CommonButton />
       </a>
     </div>
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "~/components/home/first-screen/Header.vue";
+import Header from "~/components/common/Header.vue";
 
 export default defineComponent({
   name: "index",
@@ -35,7 +35,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .first {
   height: 100vh;
-  background-image: url("/images/lezvie-first.png");
+  background-image: url("/images/lezvie-first-blur.jpg");
   background-size: cover;
   background-position: center;
   background-color: #ccc;
@@ -83,6 +83,11 @@ export default defineComponent({
         font-size: 3rem;
         letter-spacing: 1rem;
 
+        @media screen and (max-width: 400px) {
+          font-size: 2.5rem;
+          letter-spacing: 0.8rem;
+        }
+
         &::before {
           content: "";
           display: block;
@@ -96,6 +101,10 @@ export default defineComponent({
         font-size: 1.3rem;
         font-weight: 100;
         letter-spacing: 2px;
+
+        @media screen and (max-width: 400px) {
+          font-size: 1rem;
+        }
 
         &::after {
           content: "";

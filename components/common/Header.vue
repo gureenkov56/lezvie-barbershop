@@ -1,5 +1,13 @@
 <template>
   <header>
+    <Head>
+      <Title>LEZVIE BARBERSHOP — стрижки в Оренбурге</Title>
+      <Meta
+        name="description"
+        content="Мужские стрижки в Оренбурге. Профессиональная косметика, лучшие мастера, индивидуальный стиль в барбершопе Лезвие"
+      />
+      <Meta name="theme-color" content="#0f0f0f" />
+    </Head>
     <nav>
       <ul>
         <!--        <li>Главная</li>-->
@@ -28,6 +36,17 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Header",
+  head() {
+    // `head` receives the nuxt app but cannot access the component instance
+    return {
+      meta: [
+        {
+          name: "description",
+          content: "This is my page description.",
+        },
+      ],
+    };
+  },
 });
 </script>
 
@@ -39,7 +58,11 @@ header {
   left: 0;
   right: 0;
 
-  @media screen and (max-width: 700px) {
+  &.hide {
+    display: none;
+  }
+
+  @media screen and (max-width: 700px), screen and (max-height: 500px) {
     display: none;
   }
 

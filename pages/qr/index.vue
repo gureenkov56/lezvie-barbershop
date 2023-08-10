@@ -1,14 +1,12 @@
-<template>
-  <HomeFirstScreen />
-  <HomePriceSection />
-  <HomeContactsSections />
-  <CommonFooter />
-</template>
+<template></template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "index",
+  setup() {
+    navigateTo("/");
+  },
 });
 </script>
