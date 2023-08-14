@@ -49,11 +49,18 @@ footer {
     .logo {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
       font-size: 1.5rem;
       text-transform: uppercase;
       font-weight: 500;
       letter-spacing: 2px;
+
+      > span {
+        &:first-child {
+          text-align: right;
+          width: 90px;
+        }
+      }
     }
   }
 }

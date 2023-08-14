@@ -1,7 +1,8 @@
 <template>
   <HomeFirstScreen />
+  <HomeFeaturesSection />
   <HomePriceSection />
-  <HomeContactsSections />
+  <HomeContactsSection />
   <CommonFooter />
 </template>
 

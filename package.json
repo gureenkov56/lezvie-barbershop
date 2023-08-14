@@ -20,6 +20,7 @@
     "sass-loader": "10.1.1"
   },
   "dependencies": {
-    "@nuxtjs/yandex-metrika": "^1.4.0"
+    "@nuxtjs/yandex-metrika": "^1.4.0",
+    "vue-carousel": "^0.18.0"
   }
 }
