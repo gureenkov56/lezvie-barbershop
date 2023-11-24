@@ -35,7 +35,7 @@ export default defineComponent({
 .features {
   background-color: #0f0f0f;
   color: #ffffff;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 5rem 1rem;
 
   &__content {
     max-width: 1000px;

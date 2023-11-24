@@ -1,7 +1,10 @@
 <template>
+  <CommonHeader />
   <HomeFirstScreen />
   <HomeFeaturesSection />
   <HomePriceSection />
+  <HomeWhyUs />
+  <HomeInstagramSection />
   <HomeContactsSection />
   <CommonFooter />
 </template>

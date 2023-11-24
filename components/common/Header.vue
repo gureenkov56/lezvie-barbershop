@@ -10,11 +10,19 @@
     </Head>
     <nav>
       <ul>
-        <!--        <li>Главная</li>-->
-        <!--        <li>Цены</li>-->
+        <li>
+          <a href="#first">Главная</a>
+        </li>
+        <li>
+          <a href="#price"> Цены </a>
+        </li>
         <li class="space"></li>
-        <!--        <li>Контакты</li>-->
-        <!--        <li>О нас</li>-->
+        <li>
+          <a href="#contacts"> Контакты </a>
+        </li>
+        <li>
+          <a href="#whyus"> О нас </a>
+        </li>
       </ul>
     </nav>
     <div class="label">
@@ -53,10 +61,10 @@ export default defineComponent({
 <style lang="scss">
 header {
   background-color: #0f0f0f;
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 
   &.hide {
     display: none;

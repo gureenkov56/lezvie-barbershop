@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="price">
     <div class="wrapper">
       <h2>Делаем красиво</h2>
       <div class="pricelist" :class="{ full: isShowFullList }">
@@ -95,8 +95,12 @@ export default defineComponent({
   transform: translateY(5px);
 }
 
-section {
+#price {
   background-color: #0f0f0f;
+  background-image: url("/images/tools.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 3rem 1rem;
 
   .wrapper {
@@ -105,8 +109,11 @@ section {
 
     .pricelist {
       height: 150px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
       overflow: hidden;
       transition: all 1s;
+
       @media screen and (max-width: 380px) {
         height: 200px;
       }
@@ -114,14 +121,14 @@ section {
       &.full {
         height: 400px;
 
-        @media screen and (max-width: 430px) {
-          height: 450px;
-        }
         @media screen and (max-width: 380px) {
-          height: 500px;
+          height: 650px;
         }
         @media screen and (max-width: 320px) {
-          height: 550px;
+          height: 600px;
+        }
+        @media screen and (max-width: 430px) {
+          height: 500px;
         }
       }
     }

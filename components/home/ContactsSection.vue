@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts">
+  <div id="contacts">
     <div class="content">
       <div class="map">
         <div class="map-iframe">
@@ -62,7 +62,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.contacts {
+#contacts {
   background-image: url("/images/contacts-bg.jpg");
   background-size: cover;
   background-position: center;
