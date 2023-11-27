@@ -14,12 +14,9 @@
         >
           <h3>{{ key }}</h3>
           <div class="category__goods">
-            <div v-for="{ title, cost } in goods" class="good">
+            <div v-for="{ title, cost, good_id } in goods" class="good">
               <div class="image">
-                <img
-                  src="https://static.insales-cdn.com/images/products/1/7151/464034799/12319361-1.jpg"
-                  alt="картинка товара"
-                />
+                <img :src="getImage(good_id)" alt="картинка товара" />
               </div>
               <div class="info">
                 <h4 class="title">{{ title }}</h4>
@@ -37,6 +34,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ApiGoodsDataResponse } from "~/server/api/yclients-goods";
+import { GOODS_ART_IMG_MAP } from "~/constants/GOODS_ART_IMG_MAP";
 
 export default defineComponent({
   name: "CosmeticsShop",
@@ -44,8 +42,14 @@ export default defineComponent({
     const { data: apiGoodsSortByCategories }: ApiGoodsDataResponse[] =
       await useFetch("/api/yclients-goods");
 
+    function getImage(goodId: string) {
+      const image = GOODS_ART_IMG_MAP[goodId] || "default.png";
+      return "/images/goods/" + image;
+    }
+
     return {
       apiGoodsSortByCategories,
+      getImage,
     };
   },
 });
