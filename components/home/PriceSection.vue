@@ -110,7 +110,7 @@ export default defineComponent({
     .pricelist {
       height: 150px;
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 2rem 2rem;
       overflow: hidden;
       transition: all 1s;
 
