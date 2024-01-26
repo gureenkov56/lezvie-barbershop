@@ -3,6 +3,7 @@
   <HomeFirstScreen />
   <HomeFeaturesSection />
   <HomePriceSection />
+  <!-- <HomeHaircutExamplesSection /> -->
   <HomeCosmeticsShop />
   <HomeWhyUs />
   <HomeInstagramSection />

@@ -86,12 +86,17 @@ const orderCategories = [
   "Укладочные средства",
   "Уход за бородой",
   "Дополнительно",
+  "Сертификаты",
 ];
 
 function sortByCategories(
   data: ApiGoodsDataResponse[],
 ): ApiGoodsSortByCategories {
   const unsortedData = data.reduce((apiGoodsSortByCategories, good) => {
+    if(good.category === "Сертификаты Сеть Lezvie Barbershop") {
+      return apiGoodsSortByCategories;
+    }
+
     if (good.category in apiGoodsSortByCategories) {
       apiGoodsSortByCategories[good.category].push(good);
     } else {

@@ -14,7 +14,11 @@
         >
           <h3>{{ key }}</h3>
           <div class="category__goods">
-            <div v-for="{ title, cost, good_id } in goods" class="good">
+            <div 
+              v-for="{ title, cost, good_id } in goods" 
+              :key="good_id"
+              class="good"
+            >
               <div class="image">
                 <img :src="getImage(good_id)" alt="картинка товара" />
               </div>
@@ -39,10 +43,10 @@ import { GOODS_ART_IMG_MAP } from "~/constants/GOODS_ART_IMG_MAP";
 export default defineComponent({
   name: "CosmeticsShop",
   async setup() {
-    const { data: apiGoodsSortByCategories }: ApiGoodsDataResponse[] =
-      await useFetch("/api/yclients-goods");
+    const { data: apiGoodsSortByCategories } =
+      await useFetch<ApiGoodsDataResponse[]>("/api/yclients-goods");
 
-    function getImage(goodId: string) {
+    function getImage(goodId: keyof typeof GOODS_ART_IMG_MAP) {
       const image = GOODS_ART_IMG_MAP[goodId] || "default.png";
       return "/images/goods/" + image;
     }
