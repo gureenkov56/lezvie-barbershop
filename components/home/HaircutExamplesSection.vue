@@ -14,7 +14,7 @@
                 }"
             >
             </div>
-            <a href="instagram.com/barbershop.lezvie">
+            <a href="https://instagram.com/barbershop.lezvie">
                 <div 
                     :style="{
                         height: childWidth + 'px',
