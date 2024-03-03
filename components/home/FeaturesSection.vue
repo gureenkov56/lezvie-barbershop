@@ -3,7 +3,7 @@
     <div class="features__content">
       <div class="features__scroll-block">
         <div>
-          <img src="/images/features/style.jpg" alt="стиль" />
+          <img src="/images/features/123.jpg" alt="стиль" />
           <h3>ИНДИВИДУАЛЬНЫЙ СТИЛЬ</h3>
           <p>Наши барберы помогут подобрать подходящую именно вам стрижку</p>
         </div>
@@ -47,15 +47,17 @@ export default defineComponent({
     gap: 2.5rem;
     overflow-x: scroll;
 
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 
     /* Hide scrollbar for Chrome, Safari and Opera */
     &::-webkit-scrollbar {
       display: none;
     }
 
-    > div {
+    >div {
       margin-top: 1rem;
 
       img {

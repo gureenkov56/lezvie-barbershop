@@ -3,21 +3,13 @@
     <div class="content">
       <div class="map">
         <div class="map-iframe">
-          <a
-            href="https://yandex.ru/maps/org/lezviye/10932414914/?utm_medium=mapframe&utm_source=maps"
-            style="color: #eee; font-size: 12px; position: absolute; top: 0"
-            >Лезвие</a
-          ><a
+          <a href="https://yandex.ru/maps/org/lezviye/10932414914/?utm_medium=mapframe&utm_source=maps"
+            style="color: #eee; font-size: 12px; position: absolute; top: 0">Лезвие</a><a
             href="https://yandex.ru/maps/48/orenburg/category/barber_shop/239628851835/?utm_medium=mapframe&utm_source=maps"
-            style="color: #eee; font-size: 12px; position: absolute; top: 14px"
-            >Барбершоп в Оренбурге</a
-          >
+            style="color: #eee; font-size: 12px; position: absolute; top: 14px">Барбершоп в Оренбурге</a>
           <iframe
             src="https://yandex.ru/map-widget/v1/?ll=55.135349%2C51.825035&mode=search&oid=10932414914&ol=biz&z=16.85"
-            frameborder="1"
-            allowfullscreen="true"
-            style="position: relative"
-          >
+            frameborder="1" allowfullscreen="true" style="position: relative">
           </iframe>
         </div>
       </div>
@@ -63,7 +55,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #contacts {
-  background-image: url("/images/contacts-bg.jpg");
+  background-color: #000;
   background-size: cover;
   background-position: center;
 
@@ -96,7 +88,7 @@ export default defineComponent({
         bottom: 0;
         overflow: hidden;
 
-        > iframe {
+        >iframe {
           width: 100%;
           height: 100%;
         }
@@ -108,7 +100,7 @@ export default defineComponent({
       color: #c7c7c7;
       line-height: 1.5rem;
 
-      > * {
+      >* {
         font-weight: 100;
       }
 
@@ -134,13 +126,14 @@ export default defineComponent({
         margin-top: 3rem;
         margin-bottom: 2rem;
 
-        > * {
+        >* {
           font-weight: 100;
         }
 
-        > div {
+        >div {
           margin-top: 1rem;
         }
+
         .title {
           letter-spacing: 3px;
         }

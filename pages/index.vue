@@ -5,7 +5,7 @@
   <HomePriceSection />
   <HomeHaircutExamplesSection />
   <HomeCosmeticsShop />
-  <HomeWhyUs />
+  <!-- <HomeWhyUs /> -->
   <HomeInstagramSection />
   <HomeContactsSection />
   <CommonFooter />
