@@ -1,26 +1,17 @@
 <template>
     <section class="haircut-examples">
         <h2>Наши работы</h2>
-        <div 
-            class="flex" 
-            ref="flexContainer"
-        >
-            <div 
-                v-for="src in images"
-                :key="src"
-                :style="{
-                    height: childWidth + 'px',
-                    backgroundImage: 'url(' + src + ')',
-                }"
-            >
+        <div class="flex" ref="flexContainer">
+            <div v-for="src in images" :key="src" :style="{
+                height: childWidth + 'px',
+                backgroundImage: 'url(' + src + ')',
+            }">
             </div>
             <a href="https://instagram.com/barbershop.lezvie">
-                <div 
-                    :style="{
-                        height: childWidth + 'px',
-                        backgroundImage: 'url(/images/haircuts/10.jpg)',
-                    }"
-                ></div>
+                <div :style="{
+                height: childWidth + 'px',
+                backgroundImage: 'url(/images/haircuts/10.jpg)',
+            }"></div>
             </a>
             <div></div>
             <div></div>
@@ -62,10 +53,10 @@ export default defineComponent({
 
 <style lang="scss">
 .haircut-examples {
-    background-color: #0f0f0f;
+    background-color: #313131;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    
+
     h2 {
         text-align: center;
         padding-bottom: 2rem;
@@ -100,7 +91,8 @@ export default defineComponent({
             display: block;
             width: 32%;
             min-width: 150px;
-            > div {
+
+            >div {
                 width: 100%;
             }
         }

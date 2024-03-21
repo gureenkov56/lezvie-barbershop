@@ -2,7 +2,7 @@
   <div id="whyus">
     <div class="content">
       <div class="image">
-        <img src="/images/whyus/andrew.jpg" alt="Почему мы?" />
+        <img src="/images/whyus/0041.jpg" alt="Почему мы?" />
       </div>
       <div class="text">
         <h2>Почему выбирают нас?</h2>

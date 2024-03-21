@@ -3,11 +3,11 @@
   <HomeFirstScreen />
   <HomeFeaturesSection />
   <HomePriceSection />
-  <HomeHaircutExamplesSection />
   <HomeCosmeticsShop />
-  <!-- <HomeWhyUs /> -->
-  <HomeInstagramSection />
+  <HomeWhyUs />
+  <HomeHaircutExamplesSection />
   <HomeContactsSection />
+  <HomeInstagramSection />
   <CommonFooter />
 </template>
 
