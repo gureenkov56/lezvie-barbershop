@@ -12,7 +12,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 button {
     cursor: pointer;
     border: 2px solid #cd9323;
@@ -22,5 +22,9 @@ button {
     font-size: 1.2rem;
     letter-spacing: 3px;
     font-weight: 100;
+    transition: background-color .2s linear;
+    &:hover {
+        background-color: #cd9323;
+    } 
 }
 </style>
