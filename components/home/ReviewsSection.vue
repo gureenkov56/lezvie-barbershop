@@ -4,30 +4,32 @@
             <h2>Отзывы о нас</h2>
             <div class="scroller">
                 <div class="review">
-                    <div class="card" v-for="(review, idx) in data" :key="idx">
-                        <div class="stars">
-                            <img src="/svg/star.svg" alt="star" width="20px">
-                            <img src="/svg/star.svg" alt="star" width="20px">
-                            <img src="/svg/star.svg" alt="star" width="20px">
-                            <img src="/svg/star.svg" alt="star" width="20px">
-                            <img src="/svg/star.svg" alt="star" width="20px">
-                        </div>
+                    <a :href="getLink(review.source)" v-for="(review, idx) in data" :key="idx">
+                        <div class="card">
+                            <div class="stars">
+                                <img src="/svg/star.svg" alt="star" width="20px">
+                                <img src="/svg/star.svg" alt="star" width="20px">
+                                <img src="/svg/star.svg" alt="star" width="20px">
+                                <img src="/svg/star.svg" alt="star" width="20px">
+                                <img src="/svg/star.svg" alt="star" width="20px">
+                            </div>
 
-                        <div class="content">
-                            <p>{{ review.text }}</p>
-                            <div class="footer">
-                                <p class="author">{{ review.author }}</p>
-                                <p class="source" v-if="review.source === Yandex">
-                                    <img src="/images/reviews/ya-map.png" alt="Яндекс карты" width="18px">
-                                    <span>Яндекс</span>
-                                </p>
-                                <p class="source" v-else>
-                                    <img src="/images/reviews/2gis.png" alt="2гис" width="18px">
-                                    <span>2Гис</span>
-                                </p>
+                            <div class="content">
+                                <p>{{ review.text }}</p>
+                                <div class="footer">
+                                    <p class="author">{{ review.author }}</p>
+                                    <p class="source" v-if="review.source === Yandex">
+                                        <img src="/images/reviews/ya-map.png" alt="Яндекс карты" width="18px">
+                                        <span>Яндекс</span>
+                                    </p>
+                                    <p class="source" v-else>
+                                        <img src="/images/reviews/2gis.png" alt="2гис" width="18px">
+                                        <span>2Гис</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -35,12 +37,21 @@
 </template>
 
 <script lang='ts'>
-import 'swiper/css';
 import { ReviewsData, ReviewsSource } from './types/reviews';
 
 export default defineComponent({
     name: 'ReviewsSection',
     setup() {
+        function getLink(reviewsSource: ReviewsSource) {
+            switch(reviewsSource) {
+                case ReviewsSource.Yandex:
+                    return 'https://yandex.ru/maps/-/CDV6FY1K'
+                case ReviewsSource.DoubleGis:
+                    return 'https://go.2gis.com/5rqdj'
+            }
+                
+        }
+        
         const data: ReviewsData[] = [
             {
                 text: 'Супер мастера. Рекомендую. Стараются угодить любому клиенту. Зайдя один раз будете возвращаться ни один раз.',
@@ -77,6 +88,7 @@ export default defineComponent({
         return {
             data,
             Yandex: ReviewsSource.Yandex,
+            getLink,
         }
     }
 })
