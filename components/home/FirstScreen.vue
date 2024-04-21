@@ -20,7 +20,7 @@
             </div>
             <div class="buttons">
                 <div>
-                    <a href="https://b941152.yclients.com/" target="_blank">
+                    <a href="https://b941152.yclients.com/select-city/116/select-branch/" target="_blank">
                         <CommonButton class="btn-online">
                           Записаться онлайн
                         </CommonButton>

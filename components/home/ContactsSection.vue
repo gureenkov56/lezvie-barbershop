@@ -3,21 +3,28 @@
     <div class="content">
       <div class="map">
         <div class="map-iframe">
-          <a href="https://yandex.ru/maps/org/lezviye/10932414914/?utm_medium=mapframe&utm_source=maps"
-            style="color: #eee; font-size: 12px; position: absolute; top: 0">Лезвие</a><a
-            href="https://yandex.ru/maps/48/orenburg/category/barber_shop/239628851835/?utm_medium=mapframe&utm_source=maps"
-            style="color: #eee; font-size: 12px; position: absolute; top: 14px">Барбершоп в Оренбурге</a>
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=55.135349%2C51.825035&mode=search&oid=10932414914&ol=biz&z=16.85"
-            frameborder="1" allowfullscreen="true" style="position: relative">
-          </iframe>
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ae73c39fc26d52134e3a8f850b2299cbca9523aa8438b66acbd8c1738fda1fb&amp;source=constructor"
+            width="568" height="446" frameborder="0"></iframe>
         </div>
       </div>
       <div class="text">
         <h2>Контакты</h2>
+        <div class="address-radios">
+          <label :class="{'checked': addressId === 0}">
+            <input type="radio" v-model="addressId" :value="0" hidden/> ул. Берёзка
+          </label>
+          <label :class="{'checked': addressId === 1}">
+            <input type="radio" v-model="addressId" :value="1" hidden/> ТЦ Радуга
+          </label>
+        </div>
         <div>
           <span class="title">Телефон: </span>
-          <a href="tel:+79953482605" target="_blank"> +7 (995) 348-26-05 </a>
+          <a 
+            :href="`tel:+${contacts[addressId].telHref}`" 
+            target="_blank">
+            {{ contacts[addressId].tel }} 
+          </a>
         </div>
         <div>
           <span class="title">Почта: </span>
@@ -28,8 +35,8 @@
         <div class="adressAndTime">
           <div>
             <div class="title">Адрес:</div>
-            <a href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
-              Оренбург, ул. Березка 2/5
+            <a :href="contacts[addressId].addressLink" target="_blank">
+              {{ contacts[addressId].address }}
             </a>
           </div>
           <div>
@@ -37,7 +44,7 @@
             <div class="time">10:00 - 20:00 каждый день</div>
           </div>
         </div>
-        <a href="https://b941152.yclients.com/" target="_blank">
+        <a href="https://b941152.yclients.com/select-city/116/select-branch/" target="_blank">
           <CommonButton />
         </a>
       </div>
@@ -50,6 +57,28 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "ContactsSections",
+  setup() {
+    const addressId = ref(0)
+    const contacts = [
+      {
+        tel: '+7 (995) 348-26-05',
+        telHref: '79953482605',
+        address: 'Оренбург, ул. Березка 2/5',
+        addressLink: 'https://yandex.ru/maps/-/CXcvBnt'
+      },
+      {
+        tel: '+7 (995) 928-45-26',
+        telHref: '79959284526',
+        address: 'Оренбург, пр. Гагарина, 48/1',
+        addressLink: 'https://yandex.ru/maps/-/CDVQfU1f'
+      }
+    ]
+
+    return {
+      contacts,
+      addressId,
+    }
+  },
 });
 </script>
 
@@ -104,6 +133,33 @@ export default defineComponent({
         font-weight: 100;
       }
 
+      .address-radios {
+        display: flex;
+        
+        
+        label {
+          padding: 5px 25px;
+          border: 1px solid grey;
+          margin-bottom: 1rem;
+          cursor: pointer;
+          transition: background-color .5s ease, color .5s ease;
+
+          &.checked {
+            background-color: rgb(255, 217, 0);
+            color: black;
+          }
+
+
+          &:first-child {
+            border-radius: 5px 0 0 5px;
+          }
+
+          &:last-child {
+            border-radius: 0 5px 5px 0;
+          }
+        }
+      }
+
       a,
       .time {
         color: #e3e3e3;
@@ -138,6 +194,8 @@ export default defineComponent({
           letter-spacing: 3px;
         }
       }
+
+      
     }
   }
 }

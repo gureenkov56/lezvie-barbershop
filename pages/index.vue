@@ -3,9 +3,10 @@
   <HomeFirstScreen />
   <HomeFeaturesSection />
   <HomePriceSection />
-  <HomeCosmeticsShop />
   <HomeWhyUs />
+  <HomeReviewsSection />
   <HomeHaircutExamplesSection />
+  <HomeCosmeticsShop />
   <HomeContactsSection />
   <HomeInstagramSection />
   <CommonFooter />
