@@ -16,9 +16,12 @@
           поздороваться с барбером и обменяться новостями. Заходи и ты, будем
           рады!
         </p>
-        <a href="https://b941152.yclients.com/select-city/116/select-branch/" target="_blank">
+        <NuxtLink
+          href="https://b941152.yclients.com/select-city/116/select-branch/"
+          target="_blank"
+        >
           <CommonButton />
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>

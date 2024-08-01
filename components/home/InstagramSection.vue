@@ -6,16 +6,19 @@
         <p>🥳 Выигрывай подарки в регулярных розыгрышах</p>
         <p>✨ Полезные советы об уходовых средствах</p>
         <p>🤩 Будь в курсе новых акций</p>
-        <a
+        <NuxtLink
           href="https://instagram.com/barbershop.lezvie"
           class="instagram-login"
           target="_blank"
         >
           <button class="instagram-login-btn">@barbershop.lezvie</button>
-        </a>
-        <a href="https://instagram.com/barbershop.lezvie" target="_blank">
+        </NuxtLink>
+        <NuxtLink
+          href="https://instagram.com/barbershop.lezvie"
+          target="_blank"
+        >
           <button class="follow-btn">Подписаться</button>
-        </a>
+        </NuxtLink>
       </div>
       <div class="image">
         <img src="/images/instagram-in-iphone.png" alt="Instagram" />

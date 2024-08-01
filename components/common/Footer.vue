@@ -2,7 +2,9 @@
   <footer>
     <div class="content">
       <div>
-        <a href="tel:+79953482605" target="_blank"> +7 (995) 348-26-05 </a>
+        <NuxtLink href="tel:+79953482605" target="_blank">
+          +7 (995) 348-26-05
+        </NuxtLink>
       </div>
       <div class="logo">
         <span class="gothic-font">lezvie</span>
@@ -10,9 +12,9 @@
         <span class="gothic-font">barbershop</span>
       </div>
       <div>
-        <a href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
+        <NuxtLink href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
           ул. Березка 2/5
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </footer>

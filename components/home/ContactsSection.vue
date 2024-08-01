@@ -5,48 +5,57 @@
         <div class="map-iframe">
           <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ae73c39fc26d52134e3a8f850b2299cbca9523aa8438b66acbd8c1738fda1fb&amp;source=constructor"
-            width="568" height="446" frameborder="0"></iframe>
+            width="568"
+            height="446"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
       <div class="text">
         <h2>Контакты</h2>
         <div class="address-radios">
-          <label :class="{'checked': addressId === 0}">
-            <input type="radio" v-model="addressId" :value="0" hidden/> ул. Берёзка
+          <label :class="{ checked: addressId === 0 }">
+            <input type="radio" v-model="addressId" :value="0" hidden /> ул.
+            Берёзка
           </label>
-          <label :class="{'checked': addressId === 1}">
-            <input type="radio" v-model="addressId" :value="1" hidden/> ТЦ Радуга
+          <label :class="{ checked: addressId === 1 }">
+            <input type="radio" v-model="addressId" :value="1" hidden /> ТЦ
+            Радуга
           </label>
         </div>
         <div>
           <span class="title">Телефон: </span>
-          <a 
-            :href="`tel:+${contacts[addressId].telHref}`" 
-            target="_blank">
-            {{ contacts[addressId].tel }} 
-          </a>
+          <NuxtLink
+            :href="`tel:+${contacts[addressId].telHref}`"
+            target="_blank"
+          >
+            {{ contacts[addressId].tel }}
+          </NuxtLink>
         </div>
         <div>
           <span class="title">Почта: </span>
-          <a href="mailto:lezvie.barbershop56@gmail.com" target="_blank">
+          <NuxtLink href="mailto:lezvie.barbershop56@gmail.com" target="_blank">
             lezvie.barbershop56@gmail.com
-          </a>
+          </NuxtLink>
         </div>
         <div class="adressAndTime">
           <div>
             <div class="title">Адрес:</div>
-            <a :href="contacts[addressId].addressLink" target="_blank">
+            <NuxtLink :href="contacts[addressId].addressLink" target="_blank">
               {{ contacts[addressId].address }}
-            </a>
+            </NuxtLink>
           </div>
           <div>
             <div class="title">Время работы:</div>
             <div class="time">10:00 - 20:00 каждый день</div>
           </div>
         </div>
-        <a href="https://b941152.yclients.com/select-city/116/select-branch/" target="_blank">
+        <NuxtLink
+          href="https://b941152.yclients.com/select-city/116/select-branch/"
+          target="_blank"
+        >
           <CommonButton />
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -58,26 +67,26 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "ContactsSections",
   setup() {
-    const addressId = ref(0)
+    const addressId = ref(0);
     const contacts = [
       {
-        tel: '+7 (995) 348-26-05',
-        telHref: '79953482605',
-        address: 'Оренбург, ул. Березка 2/5',
-        addressLink: 'https://yandex.ru/maps/-/CXcvBnt'
+        tel: "+7 (995) 348-26-05",
+        telHref: "79953482605",
+        address: "Оренбург, ул. Березка 2/5",
+        addressLink: "https://yandex.ru/maps/-/CXcvBnt",
       },
       {
-        tel: '+7 (995) 928-45-26',
-        telHref: '79959284526',
-        address: 'Оренбург, пр. Гагарина, 48/1',
-        addressLink: 'https://yandex.ru/maps/-/CDVQfU1f'
-      }
-    ]
+        tel: "+7 (995) 928-45-26",
+        telHref: "79959284526",
+        address: "Оренбург, пр. Гагарина, 48/1",
+        addressLink: "https://yandex.ru/maps/-/CDVQfU1f",
+      },
+    ];
 
     return {
       contacts,
       addressId,
-    }
+    };
   },
 });
 </script>
@@ -117,7 +126,7 @@ export default defineComponent({
         bottom: 0;
         overflow: hidden;
 
-        >iframe {
+        > iframe {
           width: 100%;
           height: 100%;
         }
@@ -129,26 +138,26 @@ export default defineComponent({
       color: #c7c7c7;
       line-height: 1.5rem;
 
-      >* {
+      > * {
         font-weight: 100;
       }
 
       .address-radios {
         display: flex;
-        
-        
+
         label {
           padding: 5px 25px;
           border: 1px solid grey;
           margin-bottom: 1rem;
           cursor: pointer;
-          transition: background-color .5s ease, color .5s ease;
+          transition:
+            background-color 0.5s ease,
+            color 0.5s ease;
 
           &.checked {
             background-color: rgb(255, 217, 0);
             color: black;
           }
-
 
           &:first-child {
             border-radius: 5px 0 0 5px;
@@ -182,11 +191,11 @@ export default defineComponent({
         margin-top: 3rem;
         margin-bottom: 2rem;
 
-        >* {
+        > * {
           font-weight: 100;
         }
 
-        >div {
+        > div {
           margin-top: 1rem;
         }
 
@@ -194,8 +203,6 @@ export default defineComponent({
           letter-spacing: 3px;
         }
       }
-
-      
     }
   }
 }

@@ -11,17 +11,17 @@
     <nav>
       <ul>
         <li>
-          <a href="#first">Главная</a>
+          <NuxtLink href="/">Главная</NuxtLink>
         </li>
         <li>
-          <a href="#price"> Цены </a>
+          <NuxtLink href="/#price"> Цены </NuxtLink>
         </li>
         <li class="space"></li>
         <li>
-          <a href="#contacts"> Контакты </a>
+          <NuxtLink href="/barber-course">Обучение</NuxtLink>
         </li>
         <li>
-          <a href="#whyus"> О нас </a>
+          <NuxtLink href="/#contacts"> Контакты </NuxtLink>
         </li>
       </ul>
     </nav>
@@ -53,6 +53,18 @@ export default defineComponent({
           content: "This is my page description.",
         },
       ],
+    };
+  },
+  setup() {
+    const headerLinks = [
+      {
+        text: "Главная",
+        link: "",
+      },
+    ];
+
+    return {
+      headerLinks,
     };
   },
 });
