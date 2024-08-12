@@ -20,6 +20,11 @@
     "sass-loader": "10.1.1"
   },
   "dependencies": {
-    "@nuxtjs/yandex-metrika": "^1.4.0"
+    "@nuxtjs/yandex-metrika": "^1.4.0",
+    "@pinia/nuxt": "^0.5.3",
+    "pinia": "^2.2.1"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

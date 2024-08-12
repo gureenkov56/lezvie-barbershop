@@ -4,17 +4,17 @@
       <slot>
         <div class="features__scroll-block">
           <div>
-            <img src="/images/features/123.jpg" alt="стиль" />
+            <NuxtImg src="/images/features/123.jpg" alt="стиль" />
             <h3>ИНДИВИДУАЛЬНЫЙ СТИЛЬ</h3>
             <p>Наши барберы помогут подобрать подходящую именно вам стрижку</p>
           </div>
           <div>
-            <img src="/images/features/time.jpg" alt="стиль" />
+            <NuxtImg src="/images/features/time.jpg" alt="стиль" />
             <h3>ВАШЕ ВРЕМЯ</h3>
             <p>Кофе, чай, виски - проводите время у нас с удовольствием</p>
           </div>
           <div>
-            <img src="/images/features/cosmetics.jpg" alt="стиль" />
+            <NuxtImg src="/images/features/cosmetics.jpg" alt="стиль" />
             <h3>КОСМЕТИКА ОТ ПРОФИ</h3>
             <p>В работе используем проверенную косметику</p>
           </div>

@@ -1,4 +1,12 @@
 <template>
+  <Head>
+    <Title>LEZVIE BARBERSHOP — стрижки в Оренбурге</Title>
+    <Meta
+      name="description"
+      content="Мужские стрижки в Оренбурге. Профессиональная косметика, лучшие мастера, индивидуальный стиль в барбершопе Лезвие"
+    />
+    <Meta name="theme-color" content="#0f0f0f" />
+  </Head>
   <CommonHeader />
   <HomeFirstScreen />
   <HomeFeaturesSection />
@@ -10,6 +18,7 @@
   <HomeContactsSection />
   <HomeInstagramSection />
   <CommonFooter />
+  <CommonModal />
 </template>
 
 <script lang="ts">

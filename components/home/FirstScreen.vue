@@ -10,9 +10,9 @@
             <span class="since">с 2023 в Оренбурге</span>
           </h1>
           <span class="image-row">
-            <img src="/svg/nozhnici.svg" alt="nozhnici" class="nozhnici" />
-            <img src="/svg/lezvie.svg" alt="lezvie" />
-            <img src="/svg/britva.svg" alt="britva" />
+            <NuxtImg src="/svg/nozhnici.svg" alt="nozhnici" class="nozhnici" />
+            <NuxtImg src="/svg/lezvie.svg" alt="lezvie" />
+            <NuxtImg src="/svg/britva.svg" alt="britva" />
           </span>
         </div>
         <div class="buttons">
@@ -27,12 +27,9 @@
             </a>
           </div>
           <div>
-            <NuxtLink href="tel:+79953482605">
-              <CommonButton class="btn-tel">
-                Записаться по телефону
-                <div class="sub-tel">+7 (995) 348-26-05</div>
-              </CommonButton>
-            </NuxtLink>
+            <CommonButton class="btn-tel" @click="showModal">
+              Записаться по телефону
+            </CommonButton>
           </div>
         </div>
       </slot>
@@ -43,10 +40,19 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "~/components/common/Header.vue";
+import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "index",
   components: { Header },
+  setup() {
+    const store = useModalStore();
+    const { showModal } = store;
+
+    return {
+      showModal,
+    };
+  },
 });
 </script>
 
@@ -163,6 +169,7 @@ export default defineComponent({
     }
 
     .btn-tel {
+      padding: 20px 10px;
       > div {
         font-size: 0.9rem;
         color: rgb(205, 203, 199);

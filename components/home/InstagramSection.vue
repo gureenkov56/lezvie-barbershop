@@ -21,7 +21,7 @@
         </NuxtLink>
       </div>
       <div class="image">
-        <img src="/images/instagram-in-iphone.png" alt="Instagram" />
+        <NuxtImg src="/images/instagram-in-iphone.png" alt="Instagram" />
       </div>
     </div>
   </div>

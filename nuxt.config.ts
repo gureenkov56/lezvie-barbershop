@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/google-fonts", "@nuxt/image"],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@pinia/nuxt"],
+
   build: {
     // @ts-ignore
     loaders: {
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   googleFonts: {
     families: {
       // basic
@@ -26,5 +28,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   css: ["@/layouts/global.scss"],
+  compatibilityDate: "2024-08-12",
 });

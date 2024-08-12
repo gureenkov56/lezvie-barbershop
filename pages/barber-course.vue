@@ -1,4 +1,11 @@
 <template>
+  <Head>
+    <Title>Обучение на барбера в Оренбурге - LEZVIE BARBERSHOP</Title>
+    <Meta
+      name="description"
+      content="Пройди обучение и стань барбером в LEZVIE BARBERSHOP. Присоединяйся к нашему дружному коллективу"
+    />
+  </Head>
   <CommonHeader />
   <HomeFirstScreen>
     <div class="first">
@@ -17,7 +24,7 @@
         <CommonButton>
           <div class="button-inner">
             <span>Подробнее</span>
-            <img
+            <NuxtImg
               src="/svg/down-icon.svg"
               alt="icon"
               width="24px"
@@ -50,16 +57,16 @@
       <NuxtLink href="https://t.me/barbershop_lezvie">
         <CommonButton class="padding">
           <div class="button-inner gap">
-            <img src="/svg/tg-icon.svg" alt="icon" width="20px" />
+            <NuxtImg src="/svg/tg-icon.svg" alt="icon" width="20px" />
             <span> Telegram </span>
           </div>
         </CommonButton>
       </NuxtLink>
       <NuxtLink href="tel:+79953482605">
-        <CommonButton class="padding">
+        <CommonButton class="padding small-font">
           <div class="button-inner gap">
-            <img src="/svg/tel-icon.svg" alt="icon" width="24px" />
-            <span> Позвонить </span>
+            <NuxtImg src="/svg/tel-icon.svg" alt="icon" width="24px" />
+            <span>+7(995)348 2605</span>
           </div>
         </CommonButton>
       </NuxtLink>
@@ -120,10 +127,6 @@ export default defineComponent({
 }
 
 button {
-  &.padding {
-    padding-left: 2rem;
-  }
-
   .button-inner {
     display: flex;
     gap: 0.5rem;

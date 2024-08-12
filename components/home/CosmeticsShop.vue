@@ -14,13 +14,13 @@
         >
           <h3>{{ key }}</h3>
           <div class="category__goods">
-            <div 
-              v-for="{ title, cost, good_id } in goods" 
+            <div
+              v-for="{ title, cost, good_id } in goods"
               :key="good_id"
               class="good"
             >
               <div class="image">
-                <img :src="getImage(good_id)" alt="картинка товара" />
+                <NuxtImg :src="getImage(good_id)" alt="картинка товара" />
               </div>
               <div class="info">
                 <h4 class="title">{{ title }}</h4>
@@ -37,14 +37,15 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { ApiGoodsDataResponse } from "~/server/api/yclients-goods";
 import { GOODS_ART_IMG_MAP } from "~/constants/GOODS_ART_IMG_MAP";
+import type { ApiGoodsDataResponse } from "~/server/api/yclients-goods";
 
 export default defineComponent({
   name: "CosmeticsShop",
   async setup() {
-    const { data: apiGoodsSortByCategories } =
-      await useFetch<ApiGoodsDataResponse[]>("/api/yclients-goods");
+    const { data: apiGoodsSortByCategories } = await useFetch<
+      ApiGoodsDataResponse[]
+    >("/api/yclients-goods");
 
     function getImage(goodId: keyof typeof GOODS_ART_IMG_MAP) {
       const image = GOODS_ART_IMG_MAP[goodId] || "default.png";

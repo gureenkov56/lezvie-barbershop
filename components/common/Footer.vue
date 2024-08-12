@@ -8,7 +8,7 @@
       </div>
       <div class="logo">
         <span class="gothic-font">lezvie</span>
-        <img src="/svg/lezvie.svg" alt="лезвие" width="30px" />
+        <NuxtImg src="/svg/lezvie.svg" alt="лезвие" width="30px" />
         <span class="gothic-font">barbershop</span>
       </div>
       <div>

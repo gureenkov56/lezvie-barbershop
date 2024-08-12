@@ -93,7 +93,7 @@ function sortByCategories(
   data: ApiGoodsDataResponse[],
 ): ApiGoodsSortByCategories {
   const unsortedData = data.reduce((apiGoodsSortByCategories, good) => {
-    if(good.category === "Сертификаты Сеть Lezvie Barbershop") {
+    if (good.category === "Сертификаты Сеть Lezvie Barbershop") {
       return apiGoodsSortByCategories;
     }
 
@@ -113,7 +113,6 @@ function sortByCategories(
       return apiGoodsSortByCategories;
     }, {});
 
-  console.log("RES", res);
   return res;
 }
 

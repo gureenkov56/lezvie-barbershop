@@ -12,11 +12,11 @@
           >
             <div class="card">
               <div class="stars">
-                <img src="/svg/star.svg" alt="star" width="20px" />
-                <img src="/svg/star.svg" alt="star" width="20px" />
-                <img src="/svg/star.svg" alt="star" width="20px" />
-                <img src="/svg/star.svg" alt="star" width="20px" />
-                <img src="/svg/star.svg" alt="star" width="20px" />
+                <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
+                <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
+                <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
+                <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
+                <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
               </div>
 
               <div class="content">
@@ -24,7 +24,7 @@
                 <div class="footer">
                   <p class="author">{{ review.author }}</p>
                   <p class="source" v-if="review.source === Yandex">
-                    <img
+                    <NuxtImg
                       src="/images/reviews/ya-map.png"
                       alt="Яндекс карты"
                       width="18px"
@@ -32,7 +32,7 @@
                     <span>Яндекс</span>
                   </p>
                   <p class="source" v-else>
-                    <img
+                    <NuxtImg
                       src="/images/reviews/2gis.png"
                       alt="2гис"
                       width="18px"
@@ -50,8 +50,8 @@
 </template>
 
 <script lang="ts">
-import { ReviewsData, ReviewsSource } from "./types/reviews";
-
+import { ReviewsSource } from "~/components/home/types/reviews";
+import type { ReviewsData } from "~/components/home/types/reviews";
 export default defineComponent({
   name: "ReviewsSection",
   setup() {
