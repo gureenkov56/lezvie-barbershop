@@ -7,9 +7,11 @@
           <li v-for="{ name, price } in listComputed" :key="name">
             <span class="name">{{ name }}</span>
             <span class="dots">...........................</span>
-            <span class="price">{{ price }} ₽</span>
+            <span class="price">{{ price }}₽*</span>
           </li>
         </transition-group>
+        <p class="note">* Цены могут отличаться в зависимости от мастера</p>
+
         <button @click="isShowFullList = true" v-if="!isShowFullList">
           Показать все услуги
         </button>
@@ -114,8 +116,23 @@ export default defineComponent({
       overflow: hidden;
       transition: all 1s;
 
+      @media screen and (max-width: 530px) {
+        padding: 1rem 2rem 7rem 2rem;
+      }
+
+      @media screen and (max-width: 480px) {
+        padding: 1rem 2rem 9rem 2rem;
+      }
+
       @media screen and (max-width: 380px) {
+        padding: 1rem 2rem 12rem 2rem;
         height: 200px;
+      }
+
+      .note {
+        font-size: 0.9rem;
+        color: #bbbbbb;
+        margin-top: 1rem;
       }
 
       &.full {

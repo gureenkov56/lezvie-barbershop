@@ -15,6 +15,7 @@
   <HomeReviewsSection />
   <HomeHaircutExamplesSection />
   <HomeCosmeticsShop />
+  <HomeCourse />
   <HomeContactsSection />
   <HomeInstagramSection />
   <CommonFooter />

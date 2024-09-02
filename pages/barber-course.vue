@@ -21,17 +21,7 @@
         <li>Доход от 30 тыс. руб</li>
       </ul>
       <NuxtLink href="#content">
-        <CommonButton>
-          <div class="button-inner">
-            <span>Подробнее</span>
-            <NuxtImg
-              src="/svg/down-icon.svg"
-              alt="icon"
-              width="24px"
-              class="move-img"
-            />
-          </div>
-        </CommonButton>
+        <CommonButtonArrow />
       </NuxtLink>
     </div>
   </HomeFirstScreen>
@@ -65,8 +55,7 @@
       <NuxtLink href="tel:+79953482605">
         <CommonButton class="padding small-font">
           <div class="button-inner gap">
-            <NuxtImg src="/svg/tel-icon.svg" alt="icon" width="24px" />
-            <span>+7(995)348 2605</span>
+            <span class="number">+7(995)3482605</span>
           </div>
         </CommonButton>
       </NuxtLink>
@@ -76,11 +65,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Button from "~/components/common/Button.vue";
 
 export default defineComponent({
   name: "barber-course",
-  components: { Button },
 });
 </script>
 
@@ -126,22 +113,6 @@ export default defineComponent({
   }
 }
 
-button {
-  .button-inner {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-    &.gap {
-      gap: 1rem;
-    }
-
-    .move-img {
-      animation: mymove 3s infinite linear;
-    }
-  }
-}
-
 #content {
   max-width: 650px;
   margin: 0 auto;
@@ -170,18 +141,11 @@ button {
     margin-top: 0.5rem;
     display: block;
     width: 250px;
-  }
-}
 
-@keyframes mymove {
-  0% {
-    transform: translateY(-3px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(-3px);
+    .number {
+      font-size: 1rem;
+      text-wrap: nowrap;
+    }
   }
 }
 </style>
