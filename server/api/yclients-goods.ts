@@ -71,7 +71,7 @@ export default defineEventHandler(async () => {
   const fetchGoodsParams = {
     method: "GET",
     headers: {
-      Authorization: `Bearer 4b3ejf6ra2ye6tfdnez5, User ${user_token}`,
+      Authorization: `Bearer ${YCLIENTS_BEARER_CODE}, User ${user_token}`,
       Accept: "application/vnd.api.v2+json",
     },
   };

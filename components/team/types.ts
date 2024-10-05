@@ -5,3 +5,4 @@ export type BarberProfile = {
   workStartTime: number,
   portfolioImages: string[],
 }
+
