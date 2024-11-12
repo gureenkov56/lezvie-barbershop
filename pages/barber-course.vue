@@ -71,15 +71,17 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .first {
   max-width: 800px;
   color: white;
   margin: 1rem;
   padding: 3rem 2rem;
   background-color: rgba(0, 0, 0, 0.47);
+
   h1 {
     margin-bottom: 2rem;
+
     span {
       display: block;
       line-height: 2.2rem;
@@ -92,9 +94,11 @@ export default defineComponent({
         font-size: 2rem;
         font-weight: 600;
       }
+
       &.vmeste {
         font-size: 1.5rem;
       }
+
       &.lezvie {
         font-size: 1.5rem;
       }
@@ -103,6 +107,7 @@ export default defineComponent({
 
   ul {
     margin-left: 1rem;
+
     li {
       margin-bottom: 1rem;
 
@@ -116,6 +121,7 @@ export default defineComponent({
 #content {
   max-width: 650px;
   margin: 0 auto;
+
   .text {
     p {
       margin-top: 2rem;
@@ -144,7 +150,7 @@ export default defineComponent({
 
     .number {
       font-size: 1rem;
-      text-wrap: nowrap;
+      text-wrap: none;
     }
   }
 }

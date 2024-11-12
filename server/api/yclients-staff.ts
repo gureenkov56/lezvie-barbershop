@@ -1,6 +1,13 @@
-import { YCLIENTS_BEARER_CODE, YCLIENTS_COMPANY_ID, YCLIENTS_LOGIN, YCLIENTS_PASSWORD, YCLIENTS_USER } from "~/constants/yclient-api";
+import {
+  YCLIENTS_BEARER_CODE,
+  YCLIENTS_LOGIN,
+  YCLIENTS_PASSWORD,
+  YCLIENTS_USER,
+} from "~/constants/yclient-api";
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  const branchCode = getRequestURL(event).searchParams.get("branchCode");
+
   const fetchAuthOptions = {
     method: "POST",
     headers: {
@@ -13,7 +20,6 @@ export default defineEventHandler(async () => {
       password: YCLIENTS_PASSWORD,
     }),
   };
-
 
   // auth - get user token
   const {
@@ -30,9 +36,7 @@ export default defineEventHandler(async () => {
   };
 
   return await $fetch(
-    `https://api.yclients.com/api/v1/company/${YCLIENTS_COMPANY_ID}/staff`,
+    `https://api.yclients.com/api/v1/company/${branchCode}/staff`,
     fetchGoodsParams,
   ).then((res: { data: ApiGoodsDataResponse[] }) => res.data);
-
-
 });

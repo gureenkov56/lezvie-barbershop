@@ -65,6 +65,7 @@ export default defineComponent({
 <style lang="scss">
 header {
   background-color: #0f0f0f;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
