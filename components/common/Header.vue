@@ -6,14 +6,14 @@
           <NuxtLink href="/">Главная</NuxtLink>
         </li>
         <li>
-          <NuxtLink href="/#price"> Цены </NuxtLink>
+          <NuxtLink href="/#price">Цены</NuxtLink>
         </li>
         <li class="space"></li>
         <li>
-          <NuxtLink href="/barber-course">Обучение</NuxtLink>
+          <NuxtLink href="/staff">Команда</NuxtLink>
         </li>
         <li>
-          <NuxtLink href="/#contacts"> Контакты </NuxtLink>
+          <NuxtLink href="/#contacts">Контакты</NuxtLink>
         </li>
       </ul>
     </nav>

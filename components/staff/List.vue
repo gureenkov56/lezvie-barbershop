@@ -1,53 +1,45 @@
 <script setup lang="ts">
-import { Profile } from "~/adapters/Profile";
 import type { BranchCode } from "~/constants/enums/branch.enum";
-import type { StaffProfileRaw } from "~/constants/types/types";
+import { STAFF } from "~/constants/staff";
+import { getExperience } from "~/handlers/getExperience";
 
-const props = defineProps<{ branchCode: BranchCode }>();
+defineProps<{
+  selectedBranch: BranchCode;
+}>();
 
-const { data, error } = await useFetch<StaffProfileRaw[]>(
-  "/api/yclients-staff",
-  {
-    params: { branchCode: props.branchCode },
-  },
-);
-
-const profiles = computed(() => {
-  if (!data.value?.length) {
-    return [];
-  }
-
-  return data.value
-    ?.map((staffProfileRaw) => new Profile(staffProfileRaw, props.branchCode))
-    .filter((profile) => profile.isValid);
-});
+const staff = STAFF;
 </script>
+
+/* TODO: make branch toggle, avatar images, links to yclient */
 
 <template>
   <client-only>
     <div class="staff">
       <div class="staff__profiles">
-        <div v-if="error">Ошибка! Попробуйте перезагрузить страницу</div>
-        <div v-else-if="!profiles.length" class="skeleton">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div
-          v-else
-          v-for="{ name, level, avatar, linkToBooking, experience } in profiles"
-          class="profile"
+        <template
+          v-for="{
+            name,
+            level,
+            avatar,
+            linkToBooking,
+            experience,
+            branch,
+          } in staff"
         >
-          <NuxtImg :src="avatar" />
-          <div>
-            <div class="name">{{ name }}</div>
-            <div class="level">{{ level }}</div>
-            <div class="experience">Опыт работы: {{ experience }}</div>
-            <NuxtLink :href="linkToBooking">
-              <button>Записаться</button>
-            </NuxtLink>
+          <div v-show="selectedBranch === branch" class="profile">
+            <NuxtImg :src="avatar" />
+            <div>
+              <div class="name">{{ name }}</div>
+              <div class="level">{{ level }}</div>
+              <div class="experience">
+                Опыт работы: {{ getExperience(experience) }}
+              </div>
+              <NuxtLink :href="linkToBooking">
+                <button>Записаться</button>
+              </NuxtLink>
+            </div>
           </div>
-        </div>
+        </template>
       </div>
     </div>
   </client-only>
@@ -58,7 +50,6 @@ const profiles = computed(() => {
   &__profiles {
     max-width: 500px;
     margin: 0 auto;
-    padding-bottom: 50px;
     @media screen and (max-width: 700px), screen and (max-height: 500px) {
       margin-top: 0;
     }
