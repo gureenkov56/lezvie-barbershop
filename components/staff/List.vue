@@ -6,7 +6,6 @@ import { getExperience } from "~/handlers/getExperience";
 defineProps<{
   selectedBranch: BranchCode;
 }>();
-
 </script>
 
 <template>
@@ -31,9 +30,9 @@ defineProps<{
               <div class="experience">
                 Опыт работы: {{ getExperience(experience) }}
               </div>
-              <NuxtLink :href="linkToBooking">
-                <button>Записаться</button>
-              </NuxtLink>
+              <!-- <NuxtLink :href="linkToBooking"> -->
+              <!--   <button>Записаться</button> -->
+              <!-- </NuxtLink> -->
             </div>
           </div>
         </template>

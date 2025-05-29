@@ -7,71 +7,47 @@ export type BarberProfile = {
   level: string;
   linkToBooking: string;
   experience: number;
-  branch: BranchCode
-}
+  branch: BranchCode;
+};
 
 enum Levels {
-  barber = 'Барбер',
-  top = 'Топ-барбер',
-  chief = 'Шеф-барбер'
+  barber = "Барбер",
+  top = "Топ-барбер",
+  chief = "Шеф-барбер",
 }
 
-export type Staff = BarberProfile[]
+export type Staff = BarberProfile[];
 
 export const STAFF: Staff = [
-      {
-        id: 1,
-        name: 'Дмитрий',
-        avatar: '/images/staff/staff-dima.webp',
-        level: Levels.barber,
-        linkToBooking: 'https://n1110926.yclients.com/company/1025500/personal/select-services?o=m3209019',
-        experience: 1714521600000,
-        branch: BranchCode.Raduga
-      },
-      {
-        id: 2,
-        name: 'Андрей',
-        avatar: '/images/staff/staff-andrey.webp',
-        level: Levels.top,
-        linkToBooking: 'https://n1110926.yclients.com/company/1025500/personal/select-services?o=m3176632',
-        experience: 1619222400000,
-        branch: BranchCode.Raduga
-      },
-      {
-        id: 3,
-        name: 'Юлия',
-        avatar: '/images/staff/staff-yulia.webp',
-        level: Levels.barber,
-        linkToBooking: 'https://n1110926.yclients.com/company/1025500/personal/select-services?o=m3317365',
-        experience: 1723766400000,
-        branch: BranchCode.Raduga
-      },
+  {
+    id: 2,
+    name: "Андрей",
+    avatar: "/images/staff/staff-andrey.webp",
+    level: Levels.top,
+    linkToBooking:
+      "https://n1110926.yclients.com/company/1025500/personal/select-services?o=m3176632",
+    experience: 1619222400000,
+    branch: BranchCode.Raduga,
+  },
+  {
+    id: 3,
+    name: "Юлия",
+    avatar: "/images/staff/staff-yulia.webp",
+    level: Levels.barber,
+    linkToBooking:
+      "https://n1110926.yclients.com/company/1025500/personal/select-services?o=m3317365",
+    experience: 1723766400000,
+    branch: BranchCode.Raduga,
+  },
 
-      {
-        id: 4,
-        name: 'Наталья',
-        avatar: '/images/staff/staff-natalie.webp',
-        level: Levels.top,
-        linkToBooking: 'https://n1110926.yclients.com/company/875113/personal/select-services?o=m2709740',
-        experience: 1691452800000,
-        branch: BranchCode.Berezka
-      },
-      {
-        id: 5,
-        name: 'Дмитрий',
-        avatar: '/images/staff/staff-dmitriy.webp',
-        level: Levels.top,
-        linkToBooking: 'https://n1110926.yclients.com/company/875113/personal/select-services?o=m3099551',
-        experience: 1619136000000,
-        branch: BranchCode.Berezka
-      },
-      {
-        id: 6,
-        name: 'Илья',
-        avatar: '/images/staff/staff-ilya.webp',
-        level: Levels.chief,
-        linkToBooking: 'https://n1110926.yclients.com/company/875113/personal/select-services?o=m3062136',
-        experience: 1529513089000,
-        branch: BranchCode.Berezka
-      },
-    ]
+  {
+    id: 4,
+    name: "Наталья",
+    avatar: "/images/staff/staff-natalie.webp",
+    level: Levels.top,
+    linkToBooking:
+      "https://n1110926.yclients.com/company/875113/personal/select-services?o=m2709740",
+    experience: 1691452800000,
+    branch: BranchCode.Berezka,
+  },
+];

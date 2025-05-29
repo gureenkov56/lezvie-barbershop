@@ -1,22 +1,5 @@
 <template>
   <header :class="isMenuOpen && 'active'">
-    <nav>
-      <ul>
-        <li>
-          <NuxtLink href="/">Главная</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink href="/#price">Цены</NuxtLink>
-        </li>
-        <li class="space"></li>
-        <li>
-          <NuxtLink href="/staff">Команда</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink href="/#contacts">Контакты</NuxtLink>
-        </li>
-      </ul>
-    </nav>
     <div class="label">
       <div class="triangle"></div>
       <div class="triangle right"></div>
@@ -36,12 +19,9 @@
           </span>
         </li>
         <li>
-          <NuxtLink
-            class="special"
-            href="https://b941152.yclients.com/select-city/116/select-branch/"
-          >
+          <CommonButton class="special btn-tel" @click="showModal">
             Записаться
-          </NuxtLink>
+          </CommonButton>
         </li>
       </ul>
     </div>
@@ -58,6 +38,7 @@
 <script lang="ts">
 import { defineComponent, watch } from "vue";
 import { useRouter } from "vue-router";
+import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "Header",
@@ -77,10 +58,6 @@ export default defineComponent({
       {
         text: "Главная",
         link: "/#first",
-      },
-      {
-        text: "Команда",
-        link: "/staff",
       },
       {
         text: "Обучение",
@@ -127,11 +104,14 @@ export default defineComponent({
       }
     });
 
+    const store = useModalStore();
+    const { showModal } = store;
     onMounted(() => {
       removeScrollDisablingClass();
     });
 
     return {
+      showModal,
       isMenuOpen,
       mobileMenu,
       handlerMobileMenuLink,
@@ -151,7 +131,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100;
 
   &.hide {
     display: none;

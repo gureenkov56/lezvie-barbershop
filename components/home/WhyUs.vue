@@ -16,26 +16,30 @@
           поздороваться с барбером и обменяться новостями. Заходи и ты, будем
           рады!
         </p>
-        <NuxtLink
-          href="https://b941152.yclients.com/select-city/116/select-branch/"
-          target="_blank"
-        >
-          <CommonButton />
-        </NuxtLink>
+        <CommonButton class="btn-tel" @click="showModal">
+          Записаться
+        </CommonButton>
+        <!-- <NuxtLink -->
+        <!--   href="https://b941152.yclients.com/select-city/116/select-branch/" -->
+        <!--   target="_blank" -->
+        <!-- > -->
+        <!--   <CommonButton class="btn-tel" @click="showModal"> -->
+        <!--     Записаться -->
+        <!--   </CommonButton> -->
+        <!-- </NuxtLink> -->
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { useModalStore } from "~/store/useModalStore";
 
-export default defineComponent({
-  name: "WhyUs",
-});
+const store = useModalStore();
+const { showModal } = store;
 </script>
 
-<style>
+<style lang="scss">
 #whyus {
   background-color: #0f0f0f;
   padding: 3rem 1rem;

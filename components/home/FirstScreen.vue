@@ -17,18 +17,18 @@
         </div>
         <div class="buttons">
           <div>
-            <a
-              href="https://b941152.yclients.com/select-city/116/select-branch/"
-              target="_blank"
-            >
-              <CommonButton class="btn-online">
-                Записаться онлайн
-              </CommonButton>
-            </a>
+            <!-- <a -->
+            <!--   href="https://b941152.yclients.com/select-city/116/select-branch/" -->
+            <!--   target="_blank" -->
+            <!-- > -->
+            <!-- <CommonButton class="btn-online"> -->
+            <!--   Записаться онлайн -->
+            <!-- </CommonButton> -->
+            <!-- </a> -->
           </div>
           <div>
             <CommonButton class="btn-tel" @click="showModal">
-              Записаться по телефону
+              Записаться
             </CommonButton>
           </div>
         </div>

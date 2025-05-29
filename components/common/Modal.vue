@@ -67,6 +67,7 @@ export default defineComponent({
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 
   display: flex;
   justify-content: center;

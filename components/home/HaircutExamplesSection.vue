@@ -23,18 +23,16 @@
       <div></div>
     </div>
     <div class="button-wrapper">
-      <NuxtLink
-        href="https://b941152.yclients.com/select-city/116/select-branch/"
-        target="_blank"
-      >
-        <CommonButton />
-      </NuxtLink>
+      <CommonButton class="btn-tel" @click="showModal">
+        Записаться
+      </CommonButton>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "HaircutExamplesSection",
@@ -52,7 +50,10 @@ export default defineComponent({
       "/images/haircuts/5.jpg",
     ];
 
+    const store = useModalStore();
+    const { showModal } = store;
     return {
+      showModal,
       flexContainer,
       childWidth,
       images,

@@ -50,12 +50,17 @@
             <div class="time">10:00 - 20:00 каждый день</div>
           </div>
         </div>
-        <NuxtLink
-          href="https://b941152.yclients.com/select-city/116/select-branch/"
-          target="_blank"
-        >
-          <CommonButton />
-        </NuxtLink>
+        <CommonButton class="btn-tel" @click="showModal">
+          Записаться
+        </CommonButton>
+        <!-- <NuxtLink -->
+        <!--   href="https://b941152.yclients.com/select-city/116/select-branch/" -->
+        <!--   target="_blank" -->
+        <!-- > -->
+        <!--   <CommonButton class="btn-tel" @click="showModal"> -->
+        <!--     Записаться -->
+        <!--   </CommonButton> -->
+        <!-- </NuxtLink> -->
       </div>
     </div>
   </div>
@@ -63,6 +68,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "ContactsSections",
@@ -83,7 +89,11 @@ export default defineComponent({
       },
     ];
 
+    const store = useModalStore();
+    const { showModal } = store;
+
     return {
+      showModal,
       contacts,
       addressId,
     };
