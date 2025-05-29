@@ -2,12 +2,12 @@
   <section id="price">
     <div class="wrapper">
       <h2>Делаем красиво</h2>
-      <div class="pricelist" :class="{ full: isShowFullList }">
+      <div class="price-list" :class="{ full: isShowFullList }">
         <transition-group name="list" tag="ul">
           <li v-for="{ name, price } in listComputed" :key="name">
             <span class="name">{{ name }}</span>
             <span class="dots">...........................</span>
-            <span class="price">{{ price }}₽*</span>
+            <span class="price">от {{ price }}₽*</span>
           </li>
         </transition-group>
         <p class="note">* Цены могут отличаться в зависимости от мастера</p>
@@ -108,45 +108,17 @@ export default defineComponent({
   .wrapper {
     max-width: 500px;
     margin: 0 auto;
+    padding: 0;
 
-    .pricelist {
-      height: 150px;
+    .price-list {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem 3rem 2rem;
-      overflow: hidden;
+      padding: 1rem;
       transition: all 1s;
-
-      @media screen and (max-width: 530px) {
-        padding: 1rem 2rem 7rem 2rem;
-      }
-
-      @media screen and (max-width: 480px) {
-        padding: 1rem 2rem 9rem 2rem;
-      }
-
-      @media screen and (max-width: 380px) {
-        padding: 1rem 2rem 12rem 2rem;
-        height: 200px;
-      }
 
       .note {
         font-size: 0.9rem;
         color: #bbbbbb;
         margin-top: 1rem;
-      }
-
-      &.full {
-        height: 400px;
-
-        @media screen and (max-width: 380px) {
-          height: 650px;
-        }
-        @media screen and (max-width: 320px) {
-          height: 600px;
-        }
-        @media screen and (max-width: 430px) {
-          height: 500px;
-        }
       }
     }
 

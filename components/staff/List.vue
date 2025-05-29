@@ -7,10 +7,7 @@ defineProps<{
   selectedBranch: BranchCode;
 }>();
 
-const staff = STAFF;
 </script>
-
-/* TODO: make branch toggle, avatar images, links to yclient */
 
 <template>
   <client-only>
@@ -24,7 +21,7 @@ const staff = STAFF;
             linkToBooking,
             experience,
             branch,
-          } in staff"
+          } in STAFF"
         >
           <div v-show="selectedBranch === branch" class="profile">
             <NuxtImg :src="avatar" />

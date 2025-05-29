@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="isMenuOpen && 'active'">
     <nav>
       <ul>
         <li>
@@ -28,11 +28,36 @@
         </div>
       </div>
     </div>
+    <div class="mobile">
+      <ul>
+        <li v-for="{ text, link } in mobileMenu">
+          <span @click="handlerMobileMenuLink(link)">
+            {{ text }}
+          </span>
+        </li>
+        <li>
+          <NuxtLink
+            class="special"
+            href="https://b941152.yclients.com/select-city/116/select-branch/"
+          >
+            Записаться
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-btn" @click="isMenuOpen = !isMenuOpen">
+      <div class="wrapper">
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="bottom"></div>
+      </div>
+    </div>
   </header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, watch } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "Header",
@@ -48,21 +73,78 @@ export default defineComponent({
     };
   },
   setup() {
-    const headerLinks = [
+    const mobileMenu = [
       {
         text: "Главная",
-        link: "",
+        link: "/#first",
+      },
+      {
+        text: "Команда",
+        link: "/staff",
+      },
+      {
+        text: "Обучение",
+        link: "/barber-course",
+      },
+      {
+        text: "Контакты",
+        link: "/#contacts",
       },
     ];
 
+    const isMenuOpen = ref(false);
+
+    const router = useRouter();
+    const route = useRoute();
+    function handlerMobileMenuLink(link: string) {
+      console.log("link", link);
+      console.log("route.name", route.name);
+      if (route.name === "index" || link.includes(route.name)) {
+        isMenuOpen.value = false;
+      }
+
+      router.push(link);
+    }
+
+    function removeScrollDisablingClass() {
+      document
+        .getElementsByTagName("html")[0]
+        .classList.remove("disable-page-scroll");
+
+      document.body.classList.remove("disable-page-scroll");
+    }
+
+    watch(isMenuOpen, () => {
+      console.log("WATCH");
+      if (isMenuOpen.value) {
+        document
+          .getElementsByTagName("html")[0]
+          .classList.add("disable-page-scroll");
+
+        document.body.classList.add("disable-page-scroll");
+      } else {
+        removeScrollDisablingClass();
+      }
+    });
+
+    onMounted(() => {
+      removeScrollDisablingClass();
+    });
+
     return {
-      headerLinks,
+      isMenuOpen,
+      mobileMenu,
+      handlerMobileMenuLink,
     };
   },
 });
 </script>
 
 <style lang="scss">
+.disable-page-scroll {
+  // for html, body
+  overflow: hidden;
+}
 header {
   background-color: #0f0f0f;
   position: absolute;
@@ -75,8 +157,128 @@ header {
     display: none;
   }
 
-  @media screen and (max-width: 700px), screen and (max-height: 500px) {
+  .mobile,
+  .mobile-btn {
     display: none;
+  }
+
+  @media screen and (max-width: 700px), screen and (max-height: 500px) {
+    position: fixed;
+
+    top: 90vh;
+    right: 3rem;
+    left: 100%;
+    bottom: 2rem;
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: all 0.4s ease-in;
+    transition-delay: 0.2s;
+
+    border-radius: 10px;
+
+    ul li {
+      list-style-type: none;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      opacity: 0;
+      margin-top: 1rem;
+
+      transition:
+        opacity 0.2s ease-in,
+        margin-top 0.3s ease-in;
+
+      .special {
+        color: #cd9323;
+      }
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    nav,
+    .label {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f0f0f;
+      position: fixed;
+      bottom: 3rem;
+      right: 2rem;
+
+      width: 70px;
+      height: 70px;
+      border: none;
+      border-radius: 100px;
+
+      .wrapper {
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.4s ease-in;
+
+        div {
+          transition: all 0.4s ease-in;
+          background-color: #fff;
+          width: 22px;
+          height: 2px;
+        }
+      }
+    }
+
+    &.active {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition-delay: 0s;
+
+      li {
+        opacity: 1;
+        margin-top: 0;
+        transition-delay: 0.4s;
+      }
+
+      .mobile-btn {
+        .wrapper {
+          gap: 0;
+
+          div {
+            transition-delay: 0.5s;
+          }
+
+          .top {
+            transform: rotate(45deg);
+          }
+
+          .middle {
+            transition-delay: 0s;
+            opacity: 0;
+          }
+
+          .bottom {
+            transform: rotate(-45deg);
+            margin-top: -4px;
+          }
+        }
+      }
+    }
   }
 
   nav {
@@ -138,7 +340,7 @@ header {
 
     .triangle {
       position: absolute;
-      top: 97px;
+      top: 103px;
       border-width: 25px 65px;
 
       border-style: solid;

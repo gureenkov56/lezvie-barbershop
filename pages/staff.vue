@@ -43,7 +43,6 @@ const selectedBranch = ref<BranchCode>(BranchCode.Berezka);
   background-color: #181a1b !important;
   .header {
     text-align: center;
-    
   }
   .team-list {
     max-width: 1200px;

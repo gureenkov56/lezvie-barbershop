@@ -2,7 +2,7 @@
   <div>
     <div id="first">
       <slot>
-        <div></div>
+        <div v-if="!isMobile"></div>
         <div class="center-block">
           <h1>
             <span class="lezvie gothic-font">LEZVIE</span>
@@ -49,8 +49,11 @@ export default defineComponent({
     const store = useModalStore();
     const { showModal } = store;
 
+    const isMobile = computed(() => window.innerWidth <= 700);
+
     return {
       showModal,
+      isMobile,
     };
   },
 });

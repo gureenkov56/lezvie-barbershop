@@ -7,9 +7,9 @@ export function getExperience(timestamp: number) {
 
   let yearPostfix = "года";
   if (years === 1) yearPostfix = "год";
-  if (years > 4) yearPostfix = "года";
+  if (years > 4) yearPostfix = "лет";
 
-  const yearString = years ? `${years} ${yearPostfix}` : "";
+  const yearString = years ? `${years} ${yearPostfix} ` : "";
   const monthsString = months
     ? `${months} ${months > 1 ? "мес" : "месяц"}`
     : "";
