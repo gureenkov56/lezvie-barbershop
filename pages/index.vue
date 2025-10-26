@@ -14,10 +14,10 @@
   <HomeWhyUs />
   <HomeReviewsSection />
   <HomeHaircutExamplesSection />
-  <HomeCosmeticsShop />
+  <!-- <HomeCosmeticsShop /> -->
   <HomeCourse />
   <HomeContactsSection />
-  <HomeInstagramSection />
+  <!-- <HomeInstagramSection /> -->
   <CommonFooter />
   <CommonModal />
 </template>

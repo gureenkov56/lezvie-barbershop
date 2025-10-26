@@ -29,6 +29,11 @@ export default defineNuxtConfig({
         // italic
         ital: [100],
       },
+
+      'Sofia Sans Condensed' : {
+        wght: [300]
+      }
+
     },
   },
 

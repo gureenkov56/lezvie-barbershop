@@ -6,13 +6,16 @@
       alt=""
     />
     <NuxtPage />
+    <CookieNotification />
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import CookieNotification from "./components/common/CookieNotification.vue";
 
 export default defineComponent({
+    components: { CookieNotification },
   name: "App",
   setup() {
     function metrika(m, e, t, r, i, k, a) {

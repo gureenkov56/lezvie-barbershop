@@ -5,8 +5,8 @@
         <div v-if="!isMobile"></div>
         <div class="center-block">
           <h1>
-            <span class="lezvie gothic-font">LEZVIE</span>
-            <span class="barbershop gothic-font">BARBERSHOP</span>
+            <span class="lezvie ru-font">ЛЕЗВИЕ</span>
+            <span class="barbershop ru-font">БАРБЕРШОП</span>
             <span class="since">с 2023 в Оренбурге</span>
           </h1>
           <span class="image-row">
@@ -37,26 +37,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import Header from "~/components/common/Header.vue";
+<script lang="ts" setup>
 import { useModalStore } from "~/store/useModalStore";
 
-export default defineComponent({
-  name: "index",
-  components: { Header },
-  setup() {
-    const store = useModalStore();
-    const { showModal } = store;
+const store = useModalStore();
+const { showModal } = store;
 
-    const isMobile = computed(() => window.innerWidth <= 700);
 
-    return {
-      showModal,
-      isMobile,
-    };
-  },
+const width = ref(0);
+
+onMounted(() => {
+  width.value = window.innerWidth;
 });
+
+const isMobile = computed(() => width.value <= 700);
+
 </script>
 
 <style lang="scss" scoped>

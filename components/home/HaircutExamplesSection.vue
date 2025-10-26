@@ -10,14 +10,14 @@
           backgroundImage: 'url(' + src + ')',
         }"
       ></div>
-      <NuxtLink href="https://instagram.com/barbershop.lezvie">
-        <div
-          :style="{
-            height: childWidth + 'px',
-            backgroundImage: 'url(/images/haircuts/10.jpg)',
-          }"
-        ></div>
-      </NuxtLink>
+      <!-- <NuxtLink href="https://instagram.com/barbershop.lezvie"> -->
+      <!--   <div -->
+      <!--     :style="{ -->
+      <!--       height: childWidth + 'px', -->
+      <!--       backgroundImage: 'url(/images/haircuts/10.jpg)', -->
+      <!--     }" -->
+      <!--   ></div> -->
+      <!-- </NuxtLink> -->
       <div></div>
       <div></div>
       <div></div>
@@ -92,10 +92,6 @@ export default defineComponent({
       background-size: contain;
       background-repeat: no-repeat;
       transition: transform ease-in 0.1s;
-
-      &:hover {
-        transform: scale(1.1);
-      }
     }
 
     a {

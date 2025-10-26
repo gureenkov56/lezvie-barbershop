@@ -6,8 +6,8 @@
       <div class="content">
         <NuxtImg src="/svg/lezvie.svg" alt="lezvie" />
         <div>
-          <div class="lezvie gothic-font">LEZVIE</div>
-          <div class="barbershop gothic-font">BARBERSHOP</div>
+          <div class="lezvie ru-font">ЛЕЗВИЕ</div>
+          <div class="barbershop ru-font">БАРБЕРШОП</div>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@ header {
       }
 
       .lezvie {
-        font-size: 32px;
+        font-size: 25px;
         letter-spacing: 0.23rem;
       }
 
@@ -320,7 +320,7 @@ header {
 
     .triangle {
       position: absolute;
-      top: 103px;
+      top: 95px;
       border-width: 25px 65px;
 
       border-style: solid;

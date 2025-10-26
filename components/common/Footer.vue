@@ -7,14 +7,25 @@
         </NuxtLink>
       </div>
       <div class="logo">
-        <span class="gothic-font">lezvie</span>
+        <span class="ru-font">лезвие</span>
         <NuxtImg src="/svg/lezvie.svg" alt="лезвие" width="30px" />
-        <span class="gothic-font">barbershop</span>
+        <span class="ru-font">барбершоп</span>
       </div>
       <div>
         <NuxtLink href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
           ул. Березка 2/5
         </NuxtLink>
+      </div>
+    </div>
+    <div class="official-info">
+      <div>
+        ИП НЕКРАСОВА НАТАЛЬЯ ОЛЕГОВНА; 
+        ИНН 561010370491; 
+        ОГРНИП 325565800090376; 
+        Оренбург, ул. Туркестанская д. 53; 
+        <a href="mailto:Nat.nakrasowa56@mail.ru">
+          Nat.nakrasowa56@mail.ru
+        </a>
       </div>
     </div>
   </footer>
@@ -63,6 +74,17 @@ footer {
           width: 90px;
         }
       }
+    }
+  }
+
+  .official-info {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 10px;
+
+    a {
+      color: #cd9323;
+      text-decoration: underline;
     }
   }
 }
