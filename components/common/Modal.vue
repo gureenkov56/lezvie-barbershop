@@ -10,7 +10,7 @@
           <div>
             <NuxtLink href="tel:+79959284526">
               <CommonButton class="btn-tel">
-                <div class="text">пр. Гагарина, 48/1 (Радуге)</div>
+                <div class="text">пр. Гагарина, 48/1 (Радуга)</div>
                 <div class="sub-tel">+7 (995) 928-45-26</div>
               </CommonButton>
             </NuxtLink>
