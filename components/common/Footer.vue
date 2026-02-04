@@ -3,7 +3,7 @@
     <div class="content">
       <div>
         <NuxtLink href="tel:+79953482605" target="_blank">
-          +7 (995) 348-26-05
+          +7 (995) 928-45-26
         </NuxtLink>
       </div>
       <div class="logo">
@@ -13,18 +13,8 @@
       </div>
       <div>
         <NuxtLink href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
-          ул. Березка 2/5
+          пр. Гагарина, 48/1
         </NuxtLink>
-      </div>
-    </div>
-    <div class="official-info">
-      <div>
-        ИП НЕКРАСОВА НАТАЛЬЯ ОЛЕГОВНА; 
-        ИНН 561010370491; 
-        ОГРНИП 325565800090376; 
-        <a href="mailto:Nat.nakrasowa56@mail.ru">
-          Nat.nakrasowa56@mail.ru
-        </a>
       </div>
     </div>
   </footer>
