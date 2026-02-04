@@ -3,7 +3,7 @@
     <div class="content">
       <div>
         <NuxtLink href="tel:+79953482605" target="_blank">
-          +7 (995) 928-45-26
+          +7 (995) 348-26-05
         </NuxtLink>
       </div>
       <div class="logo">
