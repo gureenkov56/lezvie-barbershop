@@ -59,11 +59,11 @@ export default defineComponent({
       display: none;
     }
 
-    > div {
+    >div {
       margin-top: 1rem;
 
       img {
-        width: 305px;
+        width: 280px;
         height: 180px;
         object-fit: cover;
       }

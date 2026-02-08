@@ -2,14 +2,10 @@
   <section class="haircut-examples">
     <h2>Наши работы</h2>
     <div class="flex" ref="flexContainer">
-      <div
-        v-for="src in images"
-        :key="src"
-        :style="{
-          height: childWidth + 'px',
-          backgroundImage: 'url(' + src + ')',
-        }"
-      ></div>
+      <div v-for="src in images" :key="src" :style="{
+        height: childWidth + 'px',
+        backgroundImage: 'url(' + src + ')',
+      }"></div>
       <!-- <NuxtLink href="https://instagram.com/barbershop.lezvie"> -->
       <!--   <div -->
       <!--     :style="{ -->
@@ -23,16 +19,17 @@
       <div></div>
     </div>
     <div class="button-wrapper">
-      <CommonButton class="btn-tel" @click="showModal">
-        Записаться
-      </CommonButton>
+      <a href="https://n1110926.yclients.com/">
+        <CommonButton class="btn-tel">
+          Записаться
+        </CommonButton>
+      </a>
     </div>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "HaircutExamplesSection",
@@ -50,10 +47,7 @@ export default defineComponent({
       "/images/haircuts/5.jpg",
     ];
 
-    const store = useModalStore();
-    const { showModal } = store;
     return {
-      showModal,
       flexContainer,
       childWidth,
       images,
@@ -99,7 +93,7 @@ export default defineComponent({
       width: 32%;
       min-width: 150px;
 
-      > div {
+      >div {
         width: 100%;
       }
     }

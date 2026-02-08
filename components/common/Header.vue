@@ -19,9 +19,11 @@
           </span>
         </li>
         <li>
-          <CommonButton class="special btn-tel" @click="showModal">
-            Записаться
-          </CommonButton>
+          <a href="https://n1110926.yclients.com/">
+            <CommonButton class="special btn-tel">
+              Записаться
+            </CommonButton>
+          </a>
         </li>
       </ul>
     </div>
@@ -38,7 +40,6 @@
 <script lang="ts">
 import { defineComponent, watch } from "vue";
 import { useRouter } from "vue-router";
-import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "Header",
@@ -104,14 +105,11 @@ export default defineComponent({
       }
     });
 
-    const store = useModalStore();
-    const { showModal } = store;
     onMounted(() => {
       removeScrollDisablingClass();
     });
 
     return {
-      showModal,
       isMenuOpen,
       mobileMenu,
       handlerMobileMenuLink,
@@ -125,6 +123,7 @@ export default defineComponent({
   // for html, body
   overflow: hidden;
 }
+
 header {
   background-color: #0f0f0f;
   position: absolute;
@@ -142,7 +141,8 @@ header {
     display: none;
   }
 
-  @media screen and (max-width: 700px), screen and (max-height: 500px) {
+  @media screen and (max-width: 700px),
+  screen and (max-height: 500px) {
     position: fixed;
 
     top: 90vh;
@@ -301,6 +301,7 @@ header {
     .content {
       position: relative;
       margin-bottom: 1rem;
+
       img {
         width: 35px;
         margin-top: 0.3rem;

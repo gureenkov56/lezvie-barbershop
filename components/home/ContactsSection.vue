@@ -4,63 +4,42 @@
       <div class="map">
         <div class="map-iframe">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A8ae73c39fc26d52134e3a8f850b2299cbca9523aa8438b66acbd8c1738fda1fb&amp;source=constructor"
-            width="568"
-            height="446"
-            frameborder="0"
-          ></iframe>
+            src="https://yandex.com/map-widget/v1/?um=constructor%3A8ae73c39fc26d52134e3a8f850b2299cbca9523aa8438b66acbd8c1738fda1fb&amp;source=constructor"
+            width="568" height="446" frameborder="0">
+          </iframe>
         </div>
       </div>
       <div class="text">
         <h2>Контакты</h2>
-        <div class="address-radios">
-          <label :class="{ checked: addressId === 0 }">
-            <input type="radio" v-model="addressId" :value="0" hidden /> ул.
-            Берёзка
-          </label>
-          <label :class="{ checked: addressId === 1 }">
-            <input type="radio" v-model="addressId" :value="1" hidden /> ТЦ
-            Радуга
-          </label>
-        </div>
         <div>
-          <span class="title">Телефон: </span>
-          <NuxtLink
-            :href="`tel:+${contacts[addressId].telHref}`"
-            target="_blank"
-          >
-            {{ contacts[addressId].tel }}
+          <div class="title">Телефон: </div>
+          <NuxtLink :href="`tel:+79953482605`" target="_blank">
+            +7 (995) 348-26-05
           </NuxtLink>
         </div>
         <div>
-          <span class="title">Почта: </span>
+          <div class="title">Почта: </div>
           <NuxtLink href="mailto:lezvie.barbershop56@gmail.com" target="_blank">
             lezvie.barbershop56@gmail.com
           </NuxtLink>
         </div>
-        <div class="adressAndTime">
-          <div>
-            <div class="title">Адрес:</div>
-            <NuxtLink :href="contacts[addressId].addressLink" target="_blank">
-              {{ contacts[addressId].address }}
-            </NuxtLink>
-          </div>
-          <div>
-            <div class="title">Время работы:</div>
-            <div class="time">10:00 - 20:00 каждый день</div>
-          </div>
+        <div>
+          <div class="title">Адрес:</div>
+          <NuxtLink href="https://yandex.ru/maps/-/CDVQfU1f" target="_blank">
+            Оренбург, пр. Гагарина, 48/1<br />Здание ТЦ "Радуга" (вход с торца)
+          </NuxtLink>
         </div>
-        <CommonButton class="btn-tel" @click="showModal">
-          Записаться
-        </CommonButton>
-        <!-- <NuxtLink -->
-        <!--   href="https://b941152.yclients.com/select-city/116/select-branch/" -->
-        <!--   target="_blank" -->
-        <!-- > -->
-        <!--   <CommonButton class="btn-tel" @click="showModal"> -->
-        <!--     Записаться -->
-        <!--   </CommonButton> -->
-        <!-- </NuxtLink> -->
+        <div>
+          <div class="title">Время работы:</div>
+          <div class="time">10:00 - 20:00 каждый день</div>
+        </div>
+        <div>
+          <a href="https://n1110926.yclients.com/">
+            <CommonButton class="btn-tel">
+              Записаться
+            </CommonButton>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -68,7 +47,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useModalStore } from "~/store/useModalStore";
 
 export default defineComponent({
   name: "ContactsSections",
@@ -89,11 +67,8 @@ export default defineComponent({
       },
     ];
 
-    const store = useModalStore();
-    const { showModal } = store;
 
     return {
-      showModal,
       contacts,
       addressId,
     };
@@ -136,7 +111,7 @@ export default defineComponent({
         bottom: 0;
         overflow: hidden;
 
-        > iframe {
+        >iframe {
           width: 100%;
           height: 100%;
         }
@@ -148,8 +123,9 @@ export default defineComponent({
       color: #c7c7c7;
       line-height: 1.5rem;
 
-      > * {
+      >* {
         font-weight: 100;
+        margin-bottom: 1rem;
       }
 
       .address-radios {
@@ -198,16 +174,12 @@ export default defineComponent({
       }
 
       .adressAndTime {
-        margin-top: 3rem;
         margin-bottom: 2rem;
 
-        > * {
+        >* {
           font-weight: 100;
         }
 
-        > div {
-          margin-top: 1rem;
-        }
 
         .title {
           letter-spacing: 3px;

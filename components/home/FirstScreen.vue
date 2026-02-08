@@ -27,9 +27,11 @@
             <!-- </a> -->
           </div>
           <div>
-            <CommonButton class="btn-tel" @click="showModal">
-              Записаться
-            </CommonButton>
+            <a href="https://n1110926.yclients.com/">
+              <CommonButton class="btn-tel">
+                Записаться
+              </CommonButton>
+            </a>
           </div>
         </div>
       </slot>
@@ -38,10 +40,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useModalStore } from "~/store/useModalStore";
 
-const store = useModalStore();
-const { showModal } = store;
 
 
 const width = ref(0);
@@ -72,6 +71,7 @@ const isMobile = computed(() => width.value <= 700);
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h1 {
       text-transform: uppercase;
       color: #fac;
@@ -80,7 +80,7 @@ const isMobile = computed(() => width.value <= 700);
       flex-direction: column;
       align-items: center;
 
-      > * {
+      >* {
         display: block;
       }
 
@@ -140,7 +140,8 @@ const isMobile = computed(() => width.value <= 700);
 
     .image-row {
       margin: 0 auto;
-      > * {
+
+      >* {
         width: 30px;
         margin: 10px 10px;
       }
@@ -152,9 +153,10 @@ const isMobile = computed(() => width.value <= 700);
   }
 
   .buttons {
-    > div {
+    >div {
       margin: 0 1rem;
     }
+
     button {
       display: block;
       width: 100%;
@@ -168,7 +170,8 @@ const isMobile = computed(() => width.value <= 700);
 
     .btn-tel {
       padding: 20px 10px;
-      > div {
+
+      >div {
         font-size: 0.9rem;
         color: rgb(205, 203, 199);
         margin-top: 0.5rem;

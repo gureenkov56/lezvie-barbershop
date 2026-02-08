@@ -16,27 +16,18 @@
           поздороваться с барбером и обменяться новостями. Заходи и ты, будем
           рады!
         </p>
-        <CommonButton class="btn-tel" @click="showModal">
-          Записаться
-        </CommonButton>
-        <!-- <NuxtLink -->
-        <!--   href="https://b941152.yclients.com/select-city/116/select-branch/" -->
-        <!--   target="_blank" -->
-        <!-- > -->
-        <!--   <CommonButton class="btn-tel" @click="showModal"> -->
-        <!--     Записаться -->
-        <!--   </CommonButton> -->
-        <!-- </NuxtLink> -->
+        <a href="https://n1110926.yclients.com/">
+          <CommonButton class="btn-tel">
+            Записаться
+          </CommonButton>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useModalStore } from "~/store/useModalStore";
 
-const store = useModalStore();
-const { showModal } = store;
 </script>
 
 <style lang="scss">
@@ -52,7 +43,7 @@ const { showModal } = store;
     gap: 4rem;
 
     .text {
-      > p {
+      >p {
         margin: 2rem 0;
         max-width: 500px;
         color: #c7c7c7;
@@ -66,7 +57,7 @@ const { showModal } = store;
         visibility: hidden;
       }
 
-      > img {
+      >img {
         width: 305px;
         height: 445px;
         object-fit: cover;
