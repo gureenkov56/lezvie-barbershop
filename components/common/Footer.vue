@@ -6,11 +6,6 @@
           +7 (995) 348-26-05
         </NuxtLink>
       </div>
-      <div class="logo">
-        <span class="ru-font">лезвие</span>
-        <NuxtImg src="/svg/lezvie.svg" alt="лезвие" width="30px" />
-        <span class="ru-font">барбершоп</span>
-      </div>
       <div>
         <NuxtLink href="https://yandex.ru/maps/-/CXcvBnt" target="_blank">
           пр. Гагарина, 48/1
@@ -57,7 +52,7 @@ footer {
       font-weight: 500;
       letter-spacing: 2px;
 
-      > span {
+      >span {
         &:first-child {
           text-align: right;
           width: 90px;

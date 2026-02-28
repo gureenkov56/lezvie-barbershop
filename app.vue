@@ -6,7 +6,6 @@
       alt=""
     />
     <NuxtPage />
-    <CookieNotification />
   </div>
 </template>
 

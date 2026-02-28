@@ -4,12 +4,7 @@
       <h2>Отзывы о нас</h2>
       <div class="scroller">
         <div class="review">
-          <NuxtLink
-            :href="getLink(review.source)"
-            v-for="(review, idx) in data"
-            :key="idx"
-            target="_blank"
-          >
+          <NuxtLink :href="getLink(review.source)" v-for="(review, idx) in data" :key="idx" target="_blank">
             <div class="card">
               <div class="stars">
                 <NuxtImg src="/svg/star.svg" alt="star" width="20px" />
@@ -24,19 +19,11 @@
                 <div class="footer">
                   <p class="author">{{ review.author }}</p>
                   <p class="source" v-if="review.source === Yandex">
-                    <NuxtImg
-                      src="/images/reviews/ya-map.png"
-                      alt="Яндекс карты"
-                      width="18px"
-                    />
+                    <NuxtImg src="/images/reviews/ya-map.png" alt="Яндекс карты" width="18px" />
                     <span>Яндекс</span>
                   </p>
                   <p class="source" v-else>
-                    <NuxtImg
-                      src="/images/reviews/2gis.png"
-                      alt="2гис"
-                      width="18px"
-                    />
+                    <NuxtImg src="/images/reviews/2gis.png" alt="2гис" width="18px" />
                     <span>2Гис</span>
                   </p>
                 </div>
@@ -71,12 +58,12 @@ export default defineComponent({
         source: ReviewsSource.DoubleGis,
       },
       {
-        text: "Место отличное, впервые решил сходить в барбершоп, и не прогадал сделали стрижку на высшем уровне, а что самое главное, быстро и качествнно. Теперь буду чаще стричься.",
+        text: "Место отличное, сделали стрижку на высшем уровне, а что самое главное, быстро и качествнно. Теперь буду чаще стричься.",
         author: "Дмитрий З.",
         source: ReviewsSource.Yandex,
       },
       {
-        text: "Все здорово, все nice! Поорал чаечкой в очередной раз с цирюльником, чуть не согласился впервые на покраску волос😂. По итогу, я доволен! Хорошее Место - Хороший Человек!",
+        text: "Все здорово! Поорал чаечкой в очередной раз с цирюльником, чуть не согласился впервые на покраску волос 😂. По итогу, я доволен! Хорошее Место - Хороший Человек!",
         author: "Кир Чудинов",
         source: ReviewsSource.DoubleGis,
       },
@@ -86,7 +73,7 @@ export default defineComponent({
         source: ReviewsSource.DoubleGis,
       },
       {
-        text: "Отличный барбершоп, барберы знают и любят свое дело. Приятная атмосфера и высокое качество оказываемых услуг. Однозначно советую)",
+        text: "Отличное место, мастера знают и любят свое дело. Приятная атмосфера и высокое качество оказываемых услуг. Однозначно советую)",
         author: "Иван А.",
         source: ReviewsSource.Yandex,
       },

@@ -5,8 +5,8 @@
         <div v-if="!isMobile"></div>
         <div class="center-block">
           <h1>
-            <span class="lezvie ru-font">ЛЕЗВИЕ</span>
-            <span class="barbershop ru-font">БАРБЕРШОП</span>
+            <span class="lezvie ru-font">Мужские стрижки</span>
+            <span class="barbershop ru-font">ЛЕЗВИЕ</span>
             <span class="since">с 2023 в Оренбурге</span>
           </h1>
           <span class="image-row">
@@ -89,7 +89,7 @@ const isMobile = computed(() => width.value <= 700);
         display: flex;
         align-items: center;
         gap: 20px;
-        font-size: 1.8rem;
+        font-size: 1rem;
 
         &::before,
         &::after {

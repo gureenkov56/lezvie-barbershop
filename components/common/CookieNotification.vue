@@ -1,5 +1,6 @@
 <template>
   <div :class="classes">
+    TODO: удалить этот компонент
     <NuxtImg src="/images/cookies.png" />
     <div>
       Продолжая использовать сайт, Вы соглашаетесь с обработкой персональных
