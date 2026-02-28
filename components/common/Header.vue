@@ -7,7 +7,7 @@
         <NuxtImg src="/svg/lezvie.svg" alt="lezvie" />
         <div>
           <div class="lezvie ru-font">ЛЕЗВИЕ</div>
-          <div class="barbershop ru-font">БАРБЕРШОП</div>
+          <div class="barbershop ru-font">Мужские стрижки</div>
         </div>
       </div>
     </div>
@@ -314,14 +314,14 @@ header {
       }
 
       .barbershop {
-        font-size: 20px;
+        font-size: 14px;
         letter-spacing: 0.05rem;
       }
     }
 
     .triangle {
       position: absolute;
-      top: 95px;
+      top: 88px;
       border-width: 25px 65px;
 
       border-style: solid;
